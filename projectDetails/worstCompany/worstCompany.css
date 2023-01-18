@@ -1,3 +1,7 @@
+.ds-about-section {
+    margin: 0 20%;
+}
+
 .ds-button-sec {
     margin: 50px 0 50px 0;
 }
@@ -21,4 +25,10 @@ img {
 .ds-work-video {
     margin: 0;
     padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .ds-about-section {
+        margin: 0;
+    }
 }
