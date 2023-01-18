@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="worstCompany.css">
+        <title>WorstCompany</title>
+    </head>
+    <body>
+        <!-- header -->
+        <header class="ds-header ds-fixed-header" id="site-header">
+            <div class="container">
+                <div class="ds-header-inner">
+                <!-- logo -->
+                <a href="../../index.html" class="ds-logo">
+                    <span>N</span>Nicolas De Waegenaere
+                </a>
+                <!-- logo -->
+                <!-- social -->
+                <ul class="ds-social">
+                    <li><a href="https://github.com/NicolasDewae" target="_blank"><i class="ri-github-fill"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/nicolas-de-waegenaere-959209232/" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
+                </ul>
+                <!-- social -->
+                </div>
+            </div>
+        </header>
+        <!-- header -->
+
+        <!-- article -->
+        <div class="ds-about-section">
+            <div class="container">
+                <section>
+                    <h1 class="ds-heading">WorstCompany</h1>
+                    <div class="ds-work-video">
+                        <iframe src="https://www.youtube.com/embed/YlqIM8S5b00" frameborder="0"></iframe>
+                    </div>
+                    <div class="ds-button-sec text-center">
+                        <a href="https://github.com/NicolasDewae/worstCompany" target="_blank" class="ds-button">Répertoire Github</a>
+                    </div>
+                    <p>
+                        WorstCompany est un script d'extraction de données qui permet de récupérer une liste d'entreprises triées par note la plus basse depuis Google Maps.
+                        <br> 
+                        Ce script utilise la bibliothèque de navigation automatisée Puppeteer pour naviguer sur Google Maps, rechercher des entreprises selon les arguments passés, récupèrer les informations de ces entreprises, telles que le nom, l'adresse, la note, le nombre de commentaires, le lien vers la page de l'entreprise et les trie par ordre de note décroissante. Enfin, il génère un fichier CSV contenant toutes les informations collectées.
+                    </p>
+                    <p>
+                        Pour utiliser l'application, il faut d'abord installer puppeteer sur votre ordinateur. Ensuite, vous devez lancer l'application en ligne de commande en entrant les arguments de recherche souhaités, qui seront utilisés pour rechercher les entreprises sur Google Maps. Par exemple, pour rechercher les "pizzeria" dans la ville de "Paris", vous devriez entrer: "node index.js pizzas Paris"
+                    </p>
+                    <p>
+                        Le code de l'application composé principalement de deux fichiers: index.js et company_function.js.
+                        <br>
+                        Dans index.js, on retrouve le script principal qui va appeler les fonctions définies dans company_function.js comme suit.
+                    </p>
+                    <p>
+                        Tout d'abord index.js va appeler la fonction "consentPage()" permettant de gérer la page de consentement, qui est affichée lorsque vous accédez pour la première fois à Google Maps. Cette fonction vérifie si la page de consentement est affichée et, si c'est le cas, clique sur le bouton pour accepter les cookies.
+                    </p>
+                    <div>
+                        <img src="../../assets/images/worstCompany/consentPage.png" alt="Capture d'écran de la fonction 'consentPage()'">
+                    </div>
+                    <p>
+                        La deuxième fonction appelée est "sendResearch()" qui permet de saisir les arguments de recherche dans la barre de recherche de Google Maps et de lancer la recherche.
+                    </p>
+                    <div>
+                        <img src="../../assets/images/worstCompany/sendResearch.png" alt="Capture d'écran de la fonction 'sendResearch()'">
+                    </div>
+                    <p>
+                        La troisième fonction appelée est "scrollPage()", qui permet de faire défiler la page vers le bas jusqu'à ce qu'il n'y ait plus de résultats de recherche. Cette fonction utilise une boucle pour défiler la page et vérifie à chaque itération si il y a encore des résultats de recherche en utilisant la fonction "isLastCompany()".
+                    </p>
+                    <div>
+                        <img src="../../assets/images/worstCompany/scrollPage.png" alt="Capture d'écran de la fonction 'scrollPage()'">
+                    </div>
+                    <p>
+                        La quatrième fonction est parseCompany. Cette fonction permet de récupérer les informations des entreprises (le nom, la note, le nombre de commentaire, l'adresse et l'url de ça page google maps) en utilisant un sélecteur CSS et la méthode javascript « evaluate ». Elle stocke ces informations dans un tableau, qui est retourné pour être utilisé par d'autres fonctions.
+                    </p>
+                    <div>
+                        <img src="../../assets/images/worstCompany/parseCompany.png" alt="Capture d'écran de la fonction 'parseCompany()'">
+                    </div>
+                    <p>
+                        sortByWorst est utilisée pour trier les entreprises récupérées par ordre décroissant de leur note. Il utilise une méthode de tri JavaScript standard, sort().
+                    </p>
+                    <div>
+                        <img src="../../assets/images/worstCompany/sortByWorst.png" alt="Capture d'écran de la fonction 'sortByWorst()'">
+                    </div>
+                    <p>
+                        Pour finir, csvWriter prend en entrée le tableau d'entreprises (companies) et permet d'écrire ces données dans un fichier CSV. Le fichier est créé sur le disque, et les données sont insérées dans les colonnes correspondantes (nom, adresse, note, nombre de commentaires, lien de la page de l'entreprise). La fonction utilise la bibliothèque tierce comme csv-writer pour écrire les données dans ce fichier CSV.
+                    </p>
+                    <div>
+                        <img src="../../assets/images/worstCompany/csvWriter.png" alt="Capture d'écran de la fonction 'csvWriter()'">
+                    </div>
+                    <div class="ds-button-sec text-center">
+                        <a href="https://github.com/NicolasDewae/worstCompany" target="_blank" class="ds-button">Répertoire Github</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- article -->
+
+        <!--  footer -->
+        <footer class="ds-footer text-center">
+            <div class="container">
+                <section>
+                <span>Restez en contact</span>
+                <h4>Prêts à discuter ?</h4>
+                <a href="mailto:nicolasdewae@protonmail.com" class="ds-button">Contactez moi</a>
+                </section>
+            </div>
+        </footer>
+        <!-- footer -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+    </body>
+</html>

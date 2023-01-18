@@ -1,0 +1,24 @@
+.ds-button-sec {
+    margin: 50px 0 50px 0;
+}
+
+img {
+    display: flex;
+    margin: 20px auto;
+}
+
+.ds-work-video {
+    display: flex;
+    margin: 20px auto;
+}
+
+.ds-work-video iframe {
+    aspect-ratio: 16/9;
+    width: 80%;
+    height: 80%;
+}
+
+.ds-work-video {
+    margin: 0;
+    padding: 0;
+}
