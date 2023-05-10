@@ -33,7 +33,7 @@ figure{ margin: 0 }
 svg,img { max-width: 100%; height: auto; }
 
 /*-----------------------------------------------------------------
-  1. >>> Headr Style
+  1. >>> Header Style
 ----------------------------------------------------------------*/
 .ds-header{ position: fixed; top: 0; width: 100%; z-index: 5; background-color: #FFF; padding: 70px 0;transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease; }
 .ds-header.ds-fixed-header{ padding:20px 0;box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); }
@@ -63,9 +63,9 @@ svg,img { max-width: 100%; height: auto; }
 ----------------------------------------------------------------*/
 .ds-about-section{ padding-top: 60px; padding-bottom: 120px; }
 .ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 16px; border-bottom: 3px solid #F26464; padding-bottom: 7px; margin-bottom: 23px; }
-.ds-about-section p{ color: #373737; font-size: 24px; line-height: 40px; font-weight: 300; margin-bottom: 60px; }
+.ds-about-section p{ color: #373737; font-size: 24px; line-height: 40px; font-weight: 300; }
 
-.ds-button{ display: inline-block; text-transform: uppercase;font-size: 12px;line-height: 13px;font-weight: 600;letter-spacing: 3px; color:#F26464; padding:17px 30px;  border: 2px solid #F26464;border-radius: 60px; }
+.ds-button{ display: inline-block; text-transform: uppercase;font-size: 12px;line-height: 13px;font-weight: 600;letter-spacing: 3px; color:#F26464; padding:17px 30px;  border: 2px solid #F26464;border-radius: 60px; margin: 20px 0; }
 .ds-button:hover{ background-color:#F26464 ; color: #FFF; }
 .ds-arrow-button i{ display: inline-block; vertical-align: middle; }
 /*-----------------------------------------------------------------
@@ -100,9 +100,11 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 .ds-work-tilte{ color: #000; font-size: 30px; line-height: 36px; font-weight: 600; margin-bottom: 30px; }
 .ds-work-button{ display: flex; align-items: center; justify-content: space-between;}
 .ds-work-button a{ margin: 5% 10px; }
-.ds-work-video iframe{ margin: 10% auto; }
-.ds-work-list p{ font-weight: 300; font-size: 18px; line-height: 30px; }
+.ds-work-video iframe{ margin: 10% auto; aspect-ratio: 16/9; width: 80%; height: 80%; }
+.ds-work-video { display: flex; margin: 20px auto; padding: 0; }
+.ds-work-list p, li{ font-weight: 300; font-size: 18px; line-height: 30px; }
 .ds-work-list .ds-button{ margin-top: 20px; }
+.ds-work-env{ margin: 40px 0; }
 
 .ds-work-det-hed{ padding-top: 42px; padding-bottom: 80px; }
 .ds-work-det-title{ font-weight: 600; color:#000; font-size: 48px; margin-bottom: 20px; }
