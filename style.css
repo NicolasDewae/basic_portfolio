@@ -23,7 +23,7 @@ iframe {border: 0;outline: none;}
 img {max-width: 100%;border: none;outline: none;height: auto;}
 input,textarea {border-radius: 0;resize: none;}
 ul {padding: 0;margin: 0;}
-p, li { color: #373737; font-size: 18px; line-height: 40px; font-weight: 300; }
+p, li { color: #373737; font-size: 20px; line-height: 40px; font-weight: 400; }
 strong {font-weight: 800;}
 @font-face {
 font-family: 'Inter', sans-serif;}
